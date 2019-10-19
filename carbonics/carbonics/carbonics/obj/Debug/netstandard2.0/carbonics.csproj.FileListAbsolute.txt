@@ -10,3 +10,14 @@ C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carboni
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\carbonics.dll
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\carbonics.pdb
+C:\Users\aruad\Source\Repos\Carbonics\carbonics\carbonics\carbonics\bin\Debug\netstandard2.0\carbonics.deps.json
+C:\Users\aruad\Source\Repos\Carbonics\carbonics\carbonics\carbonics\bin\Debug\netstandard2.0\carbonics.dll
+C:\Users\aruad\Source\Repos\Carbonics\carbonics\carbonics\carbonics\bin\Debug\netstandard2.0\carbonics.pdb
+C:\Users\aruad\Source\Repos\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\aruad\Source\Repos\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\aruad\Source\Repos\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\carbonics.AssemblyInfoInputs.cache
+C:\Users\aruad\Source\Repos\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\carbonics.AssemblyInfo.cs
+C:\Users\aruad\Source\Repos\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\aruad\Source\Repos\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\carbonics.dll
+C:\Users\aruad\Source\Repos\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\carbonics.pdb
+C:\Users\aruad\Source\Repos\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\carbonics.csprojAssemblyReference.cache

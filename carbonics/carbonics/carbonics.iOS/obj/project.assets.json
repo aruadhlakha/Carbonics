@@ -714,21 +714,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Anand K Madathil\\.nuget\\packages\\": {}
+    "C:\\Users\\aruad\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anand K Madathil\\Documents\\GitHub\\Carbonics\\carbonics\\carbonics\\carbonics.iOS\\carbonics.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\aruad\\Source\\Repos\\Carbonics\\carbonics\\carbonics\\carbonics.iOS\\carbonics.iOS.csproj",
       "projectName": "carbonics.iOS",
-      "projectPath": "C:\\Users\\Anand K Madathil\\Documents\\GitHub\\Carbonics\\carbonics\\carbonics\\carbonics.iOS\\carbonics.iOS.csproj",
-      "packagesPath": "C:\\Users\\Anand K Madathil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anand K Madathil\\Documents\\GitHub\\Carbonics\\carbonics\\carbonics\\carbonics.iOS\\obj\\",
+      "projectPath": "C:\\Users\\aruad\\Source\\Repos\\Carbonics\\carbonics\\carbonics\\carbonics.iOS\\carbonics.iOS.csproj",
+      "packagesPath": "C:\\Users\\aruad\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aruad\\Source\\Repos\\Carbonics\\carbonics\\carbonics\\carbonics.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Anand K Madathil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\aruad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
@@ -740,8 +745,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Anand K Madathil\\Documents\\GitHub\\Carbonics\\carbonics\\carbonics\\carbonics\\carbonics.csproj": {
-              "projectPath": "C:\\Users\\Anand K Madathil\\Documents\\GitHub\\Carbonics\\carbonics\\carbonics\\carbonics\\carbonics.csproj"
+            "C:\\Users\\aruad\\Source\\Repos\\Carbonics\\carbonics\\carbonics\\carbonics\\carbonics.csproj": {
+              "projectPath": "C:\\Users\\aruad\\Source\\Repos\\Carbonics\\carbonics\\carbonics\\carbonics\\carbonics.csproj"
             }
           }
         }
