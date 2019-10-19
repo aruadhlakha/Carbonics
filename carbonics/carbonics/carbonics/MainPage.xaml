@@ -3,31 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:carbonics"
              x:Class="carbonics.MainPage">
-    <StackLayout>
-        <ScrollView HeightRequest="300">
-            <StackLayout>
-                <Label Text="Task 1" BackgroundColor="Red" HeightRequest="60" />
-                <Label Text="Task 2" BackgroundColor="Red" HeightRequest="60" />
-                <Label Text="Task 3" BackgroundColor="Red" HeightRequest="60" />
-                <Label Text="Task 4" BackgroundColor="Red" HeightRequest="60" />
-                <Label Text="Task 5" BackgroundColor="Red" HeightRequest="60" />
-                <Label Text="Task 6" BackgroundColor="Red" HeightRequest="60" />
-            </StackLayout>
-        </ScrollView>
-        <StackLayout VerticalOptions="End">
-            <Button Text="Click me" x:Name="Test" Clicked="Test_Clicked" HeightRequest="50"/>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
-                <Label x:Name="LevelLabel" Text="10" HorizontalTextAlignment="Center" 
+    <Grid BackgroundColor="SlateGray">
+        <StackLayout>
+            <ScrollView HeightRequest="300">
+                <StackLayout x:Name="TaskStack">
+                </StackLayout>
+            </ScrollView>
+            <StackLayout VerticalOptions="End">
+                <Button Text="Click me" x:Name="Test" Clicked="Test_Clicked" HeightRequest="50" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
+                    <Label x:Name="LevelLabel" Text="1" HorizontalTextAlignment="Center" 
                    VerticalTextAlignment="Center" HorizontalOptions="Center" 
                    VerticalOptions="Center" TextColor="Black" 
                    BackgroundColor="DarkGray" HeightRequest="20" WidthRequest="20" />
-                <Grid>
-                    <BoxView BackgroundColor="DarkSlateGray" VerticalOptions="Center" HorizontalOptions="Start" HeightRequest="10" WidthRequest="200" />
-                    <local:LevelBox x:Name="lBox"/>
-                </Grid>
+                    <Grid>
+                        <BoxView BackgroundColor="DarkSlateGray" VerticalOptions="Center" HorizontalOptions="Start" HeightRequest="10" WidthRequest="200" />
+                        <local:LevelBox x:Name="lBox"/>
+                    </Grid>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
-    </StackLayout>
+    </Grid>
+
 
 
 </ContentPage>

@@ -14,7 +14,7 @@ namespace carbonics
             BackgroundColor = Color.LawnGreen;
             HeightRequest = 10;
             
-            WidthRequest = 200 * 0.5;
+            WidthRequest = 0;
         }
     }
 }
