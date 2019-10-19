@@ -55,6 +55,7 @@ C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carboni
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\bin\Debug\System.ServiceModel.Internals.pdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\bin\Debug\System.Web.Services.pdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\bin\Debug\Mono.Security.pdb
+C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\bin\Debug\carbonics.dll.mdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\linksrc\carbonics.Android.pdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\linksrc\FormsViewGroup.pdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\linksrc\Mono.Android.pdb
@@ -77,7 +78,6 @@ C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carboni
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\linksrc\System.ServiceModel.Internals.pdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\linksrc\System.Web.Services.pdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\linksrc\Mono.Security.pdb
-C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\bin\Debug\carbonics.dll.mdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\linksrc\carbonics.dll.mdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\android\assets\carbonics.dll.mdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\android\assets\carbonics.Android.pdb
@@ -102,4 +102,6 @@ C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carboni
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics\bin\Debug\netstandard2.0\carbonics.dll
+C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\bin\Debug\carbonics.dll.mdb
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics.Android\obj\Debug\81\linksrc\carbonics.dll.mdb

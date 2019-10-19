@@ -13,5 +13,10 @@ namespace carbonics
         {
             InitializeComponent();
         }
+
+        private void Test_Clicked(object sender, EventArgs e)
+        {
+            lBox.WidthRequest = 50;
+        }
     }
 }
