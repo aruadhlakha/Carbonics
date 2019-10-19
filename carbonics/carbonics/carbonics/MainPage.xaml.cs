@@ -16,7 +16,7 @@ namespace carbonics
 
         private void Test_Clicked(object sender, EventArgs e)
         {
-            lBox.WidthRequest = 50;
+            lBox.WidthRequest = 20;
         }
     }
 }
