@@ -120,7 +120,7 @@ namespace carbonics
             public Task[] fDisplayTasks()
             {
             Task[] displayList=new Task[numTaskspDay];
-            for (int i= 0;i< numTaskspDay; i++){
+            for (int i= 0;i< numTaskspDay;i++){
                 bool compare = false;
                 do
                 {
@@ -157,6 +157,7 @@ namespace carbonics
                 if (tasksInProgress[i].checkComp() == false)
                 {
                     toReturn[j] = tasksInProgress[i];
+                    j++;
                 }
             }
             return toReturn;
@@ -166,18 +167,28 @@ namespace carbonics
             //10 remaining to be added
             private Task[] taskAssignment()
             {
-            taskList = new Task[10];
-            taskList[0] = new Task("Switch off all the appliances before going to bed", 50);
+            taskList = new Task[20];
+            taskList[0] = new Task("Switch off all the appliances before going to bed", 20);
             taskList[1] = new Task("Ditch the car and use a bike or bus to get to work", 80);
             taskList[2] = new Task("Use one less plastic bottle or can today", 30);
-            taskList[3] = new Task("Challenge a friend to a task!", 100);
+            taskList[3] = new Task("Challenge a friend to a task!", 125);
             taskList[4] = new Task("Save a gallon of water today", 120);
             taskList[5] = new Task("Switch off all the lights in the house for an hour", 90);
             taskList[6] = new Task("Don't use any paper napkins today", 50);
             taskList[7] = new Task("Recycle as much stuff as you can today", 70);
             taskList[8] = new Task("Plant a tree today!", 200);
             taskList[9] = new Task("Get together with your friends and clean up the local park", 150);
-                return taskList;
+            taskList[10] = new Task("Carpool with your friends and save fuel", 100);
+            taskList[11] = new Task("Make a compost for biodegradable waste", 250);
+            taskList[12] = new Task("Carry a reusable bag to the supermarket", 45);
+            taskList[13] = new Task("Switch the bulbs in your house for more effiecient ones", 105);
+            taskList[14] = new Task("If it's sunny outside, use a clothsline instead of the dryer", 75);
+            taskList[15] = new Task("Shorten your shower time by 10 minutes", 55);
+            taskList[16] = new Task("Reduce your printer use as much as possible today", 80);
+            taskList[17] = new Task("Use ebill or etickets instead of a paper ones", 30);
+            taskList[18] = new Task("Use rechargeable batteries instead of normal ones", 65);
+            taskList[19] = new Task("Share this app with your friends and family!", 190);
+            return taskList;
         }
     }
 }
