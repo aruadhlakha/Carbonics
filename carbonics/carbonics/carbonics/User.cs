@@ -49,7 +49,7 @@ namespace carbonics
         //swipe right changes the status of the task and
         //changes the XPcount
         //along with increasing the TasksCompleted
-        public void swipeRight(int num)
+        public Task[] swipeRight(int num)
         {
             tasksInProgress[num].SwipeRight();
             XPcount += tasksInProgress[num].xp();
@@ -81,15 +81,17 @@ namespace carbonics
                     }
                 }
                 else { }*/
+            return tasksInProgress;
             }
 
         //swipes left denoting whether the task had been completed
         //or not and then accordingly increases the XP and the 
         //tasksCompleted count
-        public void swipeLeft(int num)
+        public Task[] swipeLeft(int num)
         {
             tasksInProgress[num].SwipeLeft();
             XPcount += (int)Math.Round(0.25 * tasksInProgress[num].xp());
+            return tasksInProgress;
         }
 
         //returns taskCount
@@ -103,7 +105,7 @@ namespace carbonics
         }
 
         //selects the tasks for the day 
-        public void selectTasks(Task selectTask)
+        public Task[] selectTasks(Task selectTask)
         {
             for (int i = 0; i < numTaskspDay; i++)
             {
@@ -113,6 +115,7 @@ namespace carbonics
                     break;
                 }
             }
+            return tasksInProgress;
         }
             //returns the FIRST list of tasks so that it can 
             //be implemented on the UI and the user can pick 
@@ -161,6 +164,16 @@ namespace carbonics
                 }
             }
             return toReturn;
+        }
+        //at the end of the day, this automatically turns all
+        //the XP values to 0 giving no addition to user values
+        public Task[] setAllToTrue()
+        {
+            for (int i = 0; i < tasksInProgress.Length; i++)
+            {
+                tasksInProgress[i].SwipeLeft();
+            }
+            return tasksInProgress;
         }
 
             //defines a list of initial 20 tasks
