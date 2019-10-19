@@ -7,20 +7,34 @@ namespace carbonics
     class Task
     {
         String desc;
-        bool check=false;    
-        bool checkComp()
+        int XP;
+        bool check=false;
+        char color = 'y';
+        public Task(String description, int xp)
+        {
+            desc = description;
+            XP = xp;
+            color = 'y';
+        }
+        public bool checkComp()
         {
             return check; 
         }
-        int SwipeRight()
+        public int SwipeRight()
         {
             check = true;
+            color = 'g';
             return 0;
         }
-        int swipeLeft()
+        public int SwipeLeft()
         {
-            check = false;
+            check = true;
+            color = 'r';
             return 0;
+        }
+        public int xp()
+        {
+            return this.XP;
         }
     }
 }
