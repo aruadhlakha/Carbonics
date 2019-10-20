@@ -15,7 +15,7 @@ namespace carbonics
         private String name;
         //list of tasks per day
         private List<Task> tasksInProgress = new List<Task>();
-
+        private List<Task> tomorrowTasks = new List<Task>();
         //list of 20 tasks 
         Task[] taskList;
         Random rand = new Random();
@@ -34,6 +34,15 @@ namespace carbonics
                 int exp = (int)Application.Current.Properties["taskc" + count];
                 var t = new Task(desc, exp);
                 tasksInProgress.Add(t);
+                count++;
+            }
+            count = 0;
+            while (Application.Current.Properties.ContainsKey("tommorowtaskd" + count))
+            {
+                string desc = (string)Application.Current.Properties["tommorowtaskd" + count];
+                int exp = (int)Application.Current.Properties["tommorowtaskc" + count];
+                var t = new Task(desc, exp);
+                tomorrowTasks.Add(t);
                 count++;
             }
             this.name = name;
@@ -122,14 +131,15 @@ namespace carbonics
         //selects the tasks for the day 
         public List<Task> selectTasks(Task selectTask)
         {
-            tasksInProgress.Add(selectTask);
-            return tasksInProgress;
+            tomorrowTasks.Add(selectTask);
+            return tomorrowTasks;
         }
             //returns the FIRST list of tasks so that it can 
             //be implemented on the UI and the user can pick 
             //from a list of tasks
             public Task[] fDisplayTasks()
             {
+            if (tomorrowTasks.Count >= 5) return new Task[0];
             Task[] displayList=new Task[numTaskspDay];
             for (int i= 0;i< numTaskspDay;i++){
                 bool compare = false;
@@ -169,6 +179,22 @@ namespace carbonics
         {
             if (tasksInProgress.Contains(task)) tasksInProgress.Remove(task);
         }
+
+        public void ResetTasks()
+        {
+            tasksInProgress.Clear();
+            foreach(Task t in tomorrowTasks)
+            {
+                tasksInProgress.Add(t);
+            }
+            tomorrowTasks.Clear();
+        }
+
+        public List<Task> GetTomorrowTasks()
+        {
+            return tomorrowTasks;
+        }
+
             //defines a list of initial 20 tasks
             //10 remaining to be added
             private Task[] taskAssignment()

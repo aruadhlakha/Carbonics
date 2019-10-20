@@ -33,6 +33,18 @@ namespace carbonics
                 Application.Current.Properties["taskc" + count] = t.xp();
                 count++;
             }
+            count = 0;
+            for (int i = 0; i < 50; i++)
+            {
+                Application.Current.Properties.Remove("tommorowtaskd" + i);
+                Application.Current.Properties.Remove("tommorowtaskc" + i);
+            }
+            foreach (Task t in ((MainPage)MainPage).user.GetTomorrowTasks())
+            {
+                Application.Current.Properties["tommorowtaskd" + count] = t.GetDesc();
+                Application.Current.Properties["tommorowtaskc" + count] = t.xp();
+                count++;
+            }
         }
 
         protected override void OnResume()

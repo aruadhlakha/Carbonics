@@ -14,7 +14,8 @@ namespace carbonics
         public User user;
         int exp = 0;
         int level = 1;
-        int timeLeft = 1000;
+        int timeLeft = 30;
+        DateTime startTime;
 
         public MainPage()
         {
@@ -27,6 +28,7 @@ namespace carbonics
                 level = (int)Application.Current.Properties["level"];
             if (Application.Current.Properties.ContainsKey("exp"))
                 exp = (int)Application.Current.Properties["exp"];
+            startTime = DateTime.Now;
             user = new User(level, exp, 10, "Aryan", timeLeft);
             var taskLs = user.displayTasks();
             RefreshScreen();
@@ -75,6 +77,22 @@ namespace carbonics
             if (tmp != level) exp = 0;
             Application.Current.Properties["level"] = level;
             Application.Current.Properties["exp"] = exp;
+        }
+
+        public void ResetDay()
+        {
+            user.ResetTasks();
+            RefreshScreen();
+        }
+
+        public void UpdateTime()
+        {
+            timeLeft -= (DateTime.Now - startTime).Seconds;
+            if (timeLeft <= 0)
+            {
+                timeLeft = 30;
+                ResetDay();
+            }
         }
     }
 }

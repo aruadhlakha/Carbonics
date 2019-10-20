@@ -28,6 +28,7 @@ namespace carbonics
                 if (box.GetSelected())
                     MainPage.page.user.selectTasks(box.GetTask());
             }
+            MainPage.page.UpdateTime();
             Navigation.PopModalAsync();
             MainPage.page.RefreshScreen();
         }

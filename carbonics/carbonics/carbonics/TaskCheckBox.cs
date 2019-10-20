@@ -22,13 +22,13 @@ namespace carbonics
         }
         public TaskCheckBox(Task t)
         {
+            numSelected = Math.Min(MainPage.page.user.GetTomorrowTasks().Count, 5);
             task = t;
             Children.Add(new Label { Text = t.GetDesc(), FontSize = 10, BackgroundColor = Color.Gold, HeightRequest = 60,
                 HorizontalTextAlignment = TextAlignment.Start, VerticalTextAlignment = TextAlignment.Center });
-            var b = new Button { Text = "Did it!", FontSize = 7, BackgroundColor = Color.LightSteelBlue, HeightRequest = 60,
+            var b = new Button { Text = "Not Selected", FontSize = 7, BackgroundColor = Color.LightSteelBlue, HeightRequest = 60,
                 WidthRequest = 60, HorizontalOptions = LayoutOptions.End };
             Children.Add(b);
-            b.Text = "Not Selected";
             b.Clicked += new EventHandler((object sender, EventArgs args) => {
                 if (selected) numSelected--;
                 selected = !selected;
