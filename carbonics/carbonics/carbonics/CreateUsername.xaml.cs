@@ -12,6 +12,7 @@ namespace carbonics
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CreateUsername : ContentPage
 	{
+        bool privacy = false;
 		public CreateUsername ()
 		{
 			InitializeComponent ();
@@ -20,9 +21,16 @@ namespace carbonics
         private void SetUser_Clicked(object sender, EventArgs e)
         {
             if ((userent.Text == null) || (userent.Text == "")) return;
+            Application.Current.Properties["privacy"] = privacy;
             Application.Current.Properties["username"] = userent.Text;
             MainPage page = new MainPage();
             Navigation.PushModalAsync(page);
+        }
+
+        private void Option_Clicked(object sender, EventArgs e)
+        {
+            privacy = !privacy;
+            option.Text = privacy ? "Yes" : "No";
         }
     }
 }

@@ -3,12 +3,25 @@
     table, th, td {
         border: 1px solid black;
         border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+        column-width: 200px;
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+    }
+    div {
     }
     </style>
     <body>
-    <p id="testt"></p>
+    <font face="Arial">
+    <h2>SustainEx: the sustainable leaderboard</h2>
+    <div>
     <table id="leaderboard">
     </table>
+    </div>
+    </font>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
 
@@ -56,17 +69,28 @@ function generateTableHead(table, data) {
   }
 }
 function generateTable(table, data) {
-  for (let element of data) {
+  var names = [];
+  var newElements = [];
+  for (let element of data.reverse()) {
+    if(names.includes(element["Username"])) continue;
+    else {
+        names.push(element["Username"]);
+        newElements.push(element);
+    }
+  }
+  for(let newEl of newElements.reverse()) {
     let row = table.insertRow();
-    for (key in element) {
+    for (key in newEl) {
       let cell = row.insertCell();
-      let text = document.createTextNode(element[key]);
+      let text = document.createTextNode(newEl[key]);
       cell.appendChild(text);
     }
   }
 }
 firebase.database().ref('MyTestData').on('value', function(snapshot) {
 let table = document.querySelector("table");
+document.getElementById('leaderboard').innerHTML = '';
+//$("#table_of_items tr").remove();
 let data = Object.keys(snapshotToArray(snapshot)[0]);
 generateTableHead(table, data);
 generateTable(table, snapshotToArray(snapshot));

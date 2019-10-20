@@ -28,7 +28,7 @@ namespace carbonics
         private void Confirmer_Clicked(object sender, EventArgs e)
         {
             var props = Application.Current.Properties;
-            if (props.ContainsKey("username") && props.ContainsKey("exp") && props.ContainsKey("level"))
+            if (props.ContainsKey("privacy") && (bool)props["privacy"] && props.ContainsKey("username") && props.ContainsKey("exp") && props.ContainsKey("level"))
             {
                 IFirebaseConfig config = new FirebaseConfig
                 {

@@ -11,6 +11,10 @@
             <Label Text="You're new! Set your username. " HorizontalOptions="Center"/>
             <Entry x:Name="userent" HorizontalTextAlignment="Center"/>
             <Label Text="(Don't use your real name)" HorizontalOptions="Center" FontSize="7"/>
+            <Grid>
+                <Label Text="Would you like your level score to be on the leaderboard?" VerticalOptions ="Center" HorizontalOptions="StartAndExpand" FontSize="10"/>
+                <Button x:Name="option" Clicked="Option_Clicked" Text="No" HeightRequest="50" WidthRequest="100" HorizontalOptions="End" />
+            </Grid>
             <Button Text="Start sustaining!" x:Name="SetUser" VerticalOptions="End" Clicked="SetUser_Clicked" HeightRequest="50" />
         </StackLayout>
     </ContentPage.Content>
