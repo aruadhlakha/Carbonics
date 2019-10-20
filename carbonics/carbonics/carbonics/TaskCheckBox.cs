@@ -25,7 +25,8 @@ namespace carbonics
             numSelected = Math.Min(MainPage.page.user.GetTomorrowTasks().Count, 5);
             task = t;
             Children.Add(new Label { Text = t.GetDesc(), FontSize = 10, BackgroundColor = Color.Gold, HeightRequest = 60,
-                HorizontalTextAlignment = TextAlignment.Start, VerticalTextAlignment = TextAlignment.Center });
+                HorizontalTextAlignment = TextAlignment.Start, VerticalTextAlignment = TextAlignment.Center,
+            });
             var b = new Button { Text = "Not Selected", FontSize = 7, BackgroundColor = Color.LightSteelBlue, HeightRequest = 60,
                 WidthRequest = 60, HorizontalOptions = LayoutOptions.End };
             Children.Add(b);

@@ -32,12 +32,17 @@ namespace carbonics
             user = new User(level, exp, 10, "Aryan", timeLeft);
             var taskLs = user.displayTasks();
             RefreshScreen();
+            Device.StartTimer(TimeSpan.FromSeconds(1), UpdateTime);
+            UpdateTime();
         }
 
         public void NDTasks_Clicked(object sender, EventArgs e)
         {
-            var proposal = new TaskProposal();
-            Navigation.PushModalAsync(proposal);
+            if(!TaskProposal.opened)
+            {
+                var proposal = new TaskProposal();
+                Navigation.PushModalAsync(proposal);
+            }
         }
 
         public void IncExperience(int inc)
@@ -57,7 +62,6 @@ namespace carbonics
                 if (tk != null)
                     taskStack.Children.Add(new TaskBoxGUI(tk));
             }
-            timeTill.Text = timeLeft / 3600 + " hours, " + timeLeft / 60 + " minutes and " + timeLeft + " seconds till reset";
         }
 
         private void UpdateLvView()
@@ -87,14 +91,16 @@ namespace carbonics
             RefreshScreen();
         }
 
-        public void UpdateTime()
+        public bool UpdateTime()
         {
-            timeLeft -= (DateTime.Now - startTime).Seconds;
+            timeLeft -= 1;
             if (timeLeft <= 0)
             {
                 timeLeft = 30;
                 ResetDay();
             }
+            timeTill.Text = timeLeft / 3600 + " hours, " + timeLeft / 60 + " minutes and " + timeLeft + " seconds till reset";
+            return true;
         }
     }
 }

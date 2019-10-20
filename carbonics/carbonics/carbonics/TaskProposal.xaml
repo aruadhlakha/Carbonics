@@ -5,10 +5,10 @@
     <ContentPage.Content>
         <Grid BackgroundColor="SlateGray">
             <StackLayout>
-                <ScrollView HeightRequest="350">
+                <ScrollView VerticalOptions="StartAndExpand">
                     <StackLayout x:Name="Stacker" />
                 </ScrollView>
-                <Button Text="Confirm tomorrow's tasks!" x:Name="Confirmer" Clicked="Confirmer_Clicked" HeightRequest="50" />
+                <Button Text="Confirm tomorrow's tasks!" x:Name="Confirmer" Clicked="Confirmer_Clicked" HeightRequest="50" VerticalOptions="End" Margin="0, 0, 0, 10"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

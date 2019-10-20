@@ -11,7 +11,7 @@ namespace carbonics
         {
             VerticalOptions = LayoutOptions.Center;
             HorizontalOptions = LayoutOptions.Start;
-            BackgroundColor = Color.LawnGreen;
+            BackgroundColor = Color.DarkSeaGreen;
             HeightRequest = 10;
             
             WidthRequest = 0;

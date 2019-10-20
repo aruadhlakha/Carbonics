@@ -3,29 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:carbonics"
              x:Class="carbonics.MainPage">
-    <Grid BackgroundColor="SlateGray">
-        <StackLayout>
-            <Label x:Name="timeTill" FontSize ="12" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-            <ScrollView HeightRequest="280">
+    <StackLayout BackgroundColor="SlateGray">
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Label x:Name="timeTill" FontSize ="16" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Image Source="logo.png" HeightRequest="20" WidthRequest="20"></Image>
+            <ScrollView >
                 <StackLayout x:Name="TaskStack">
                 </StackLayout>
             </ScrollView>
-            <StackLayout VerticalOptions="End">
-                <Button Text="Select next day's tasks" x:Name="NDTasks" Clicked="NDTasks_Clicked" HeightRequest="50" />
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
-                    <Label x:Name="LevelLabel" Text="1" HorizontalTextAlignment="Center" 
+        </StackLayout>
+
+        <StackLayout VerticalOptions="End">
+            <Button Text="Select next day's tasks" x:Name="NDTasks" Clicked="NDTasks_Clicked" HeightRequest="50" VerticalOptions="End"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="0, 0, 0, 10">
+                <Label x:Name="LevelLabel" Text="1" HorizontalTextAlignment="Center" 
                    VerticalTextAlignment="Center" HorizontalOptions="Center" 
                    VerticalOptions="Center" TextColor="Black" 
                    BackgroundColor="DarkGray" HeightRequest="20" WidthRequest="20" />
-                    <Grid>
-                        <BoxView BackgroundColor="DarkSlateGray" VerticalOptions="Center" HorizontalOptions="Start" HeightRequest="10" WidthRequest="200" />
-                        <local:LevelBox x:Name="lBox"/>
-                        <Label x:Name="expfrac" TextColor ="White" FontSize="8" Text="Test" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HeightRequest="10" WidthRequest="200"/>
-                    </Grid>
-                </StackLayout>
+                <Grid VerticalOptions="End">
+                    <BoxView BackgroundColor="DarkSlateGray" VerticalOptions="Center" HorizontalOptions="Start" HeightRequest="10" WidthRequest="200" />
+                    <local:LevelBox x:Name="lBox"/>
+                    <Label x:Name="expfrac" TextColor ="White" FontSize="8" Text="Test" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HeightRequest="10" WidthRequest="200"/>
+                </Grid>
             </StackLayout>
         </StackLayout>
-    </Grid>
+    </StackLayout>
 
 
 

@@ -108,7 +108,13 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "carbonics.Android.dll" comes first in this list. */
 		"carbonics.Android.dll",
 		"carbonics.dll",
+		"FireSharp.dll",
 		"FormsViewGroup.dll",
+		"Microsoft.Threading.Tasks.dll",
+		"Microsoft.Threading.Tasks.Extensions.dll",
+		"Newtonsoft.Json.dll",
+		"System.Net.Http.Extensions.dll",
+		"System.Net.Http.Primitives.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
 		"Xamarin.Android.Arch.Lifecycle.Runtime.dll",

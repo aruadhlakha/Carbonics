@@ -29,7 +29,7 @@ namespace carbonics
                 Application.Current.Properties.Remove("taskd" + i);
                 Application.Current.Properties.Remove("taskc" + i);
             }
-            if(MainPage is MainPage)
+            if (MainPage is MainPage)
             {
                 foreach (Task t in ((MainPage)MainPage).user.displayTasks())
                 {
@@ -51,6 +51,7 @@ namespace carbonics
                 }
             }
         }
+        
 
         protected override void OnResume()
         {
