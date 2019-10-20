@@ -11,9 +11,9 @@ namespace carbonics
     {
         public static StackLayout taskStack;
         public static MainPage page;
+        public User user;
         int exp = 0;
         int level = 1;
-
 
         public MainPage()
         {
@@ -28,17 +28,18 @@ namespace carbonics
                 level = (int)Application.Current.Properties["level"];
             if (Application.Current.Properties.ContainsKey("exp"))
                 exp = (int)Application.Current.Properties["exp"];
+            user = new User(level, exp, 10, "Aryan");
             UpdateLvView();
         }
 
-        public void Test_Clicked(object sender, EventArgs e)
+        public void NDTasks_Clicked(object sender, EventArgs e)
         {
-            lBox.WidthRequest = 20;
+            var proposal = new TaskProposal();
+            Navigation.PushModalAsync(proposal);
         }
 
         public void IncExperience(int inc)
         {
-            exp += inc;
             CalcLev();
             UpdateLvView();
         }

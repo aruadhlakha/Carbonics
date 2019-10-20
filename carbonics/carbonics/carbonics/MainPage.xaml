@@ -10,7 +10,7 @@
                 </StackLayout>
             </ScrollView>
             <StackLayout VerticalOptions="End">
-                <Button Text="Click me" x:Name="Test" Clicked="Test_Clicked" HeightRequest="50" />
+                <Button Text="Select next day's tasks" x:Name="NDTasks" Clicked="NDTasks_Clicked" HeightRequest="50" />
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
                     <Label x:Name="LevelLabel" Text="1" HorizontalTextAlignment="Center" 
                    VerticalTextAlignment="Center" HorizontalOptions="Center" 

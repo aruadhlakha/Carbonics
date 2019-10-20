@@ -9,9 +9,22 @@ namespace carbonics
     class TaskBoxGUI : Grid
     {
         public int experience = 20;
-        public TaskBoxGUI(string pText)
+        public TaskBoxGUI(string t)
         {
-            Children.Add(new Label { Text = pText, BackgroundColor = Color.Gold, HeightRequest = 60, HorizontalTextAlignment = TextAlignment.Center, VerticalTextAlignment = TextAlignment.Center });
+            Children.Add(new Label { Text = t, BackgroundColor = Color.Gold, HeightRequest = 60, HorizontalTextAlignment = TextAlignment.Center, VerticalTextAlignment = TextAlignment.Center });
+            var fail = new Button { Text = "Not quite", FontSize = 8, BackgroundColor = Color.LightSteelBlue, HeightRequest = 60, WidthRequest = 60, HorizontalOptions = LayoutOptions.Start };
+            Children.Add(fail);
+            fail.Clicked += new EventHandler((object sender, EventArgs args) => { Destroy(false); });
+            var pass = new Button { Text = "Did it!", FontSize = 8, BackgroundColor = Color.LightSteelBlue, HeightRequest = 60, WidthRequest = 60, HorizontalOptions = LayoutOptions.End };
+            Children.Add(pass);
+            pass.Clicked += new EventHandler((object sender, EventArgs args) => { Destroy(true); });
+
+        }
+
+        public TaskBoxGUI(Task task)
+        {
+            experience = task.xp();
+            Children.Add(new Label { Text = task.GetDesc(), BackgroundColor = Color.Gold, HeightRequest = 60, HorizontalTextAlignment = TextAlignment.Center, VerticalTextAlignment = TextAlignment.Center });
             var fail = new Button { Text = "Not quite", FontSize = 8, BackgroundColor = Color.LightSteelBlue, HeightRequest = 60, WidthRequest = 60, HorizontalOptions = LayoutOptions.Start };
             Children.Add(fail);
             fail.Clicked += new EventHandler((object sender, EventArgs args) => { Destroy(false); });
@@ -23,7 +36,10 @@ namespace carbonics
 
         private void Destroy(bool pass)
         {
-            MainPage.page.IncExperience(pass ? experience : experience / 4);
+            if(pass)
+            {
+
+            }
             MainPage.taskStack.Children.Remove(this);
             MainPage.taskStack.ForceLayout();
         }

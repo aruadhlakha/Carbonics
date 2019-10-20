@@ -10,3 +10,4 @@ C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carboni
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\carbonics.dll
 C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\carbonics.pdb
+C:\Users\Anand K Madathil\Documents\GitHub\Carbonics\carbonics\carbonics\carbonics\obj\Debug\netstandard2.0\TaskProposal.xaml.g.cs

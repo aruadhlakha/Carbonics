@@ -20,7 +20,7 @@ namespace carbonics {
         private global::Xamarin.Forms.StackLayout TaskStack;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button Test;
+        private global::Xamarin.Forms.Button NDTasks;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label LevelLabel;
@@ -32,7 +32,7 @@ namespace carbonics {
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MainPage));
             TaskStack = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "TaskStack");
-            Test = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "Test");
+            NDTasks = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "NDTasks");
             LevelLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "LevelLabel");
             lBox = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::carbonics.LevelBox>(this, "lBox");
         }
