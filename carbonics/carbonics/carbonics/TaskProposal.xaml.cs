@@ -68,8 +68,14 @@ namespace carbonics
                 this.Username = username;
                 this.Experience = exp;
                 this.Level = level;
-                TotalExperience = (level - 1) * 100 + exp;
+                TotalExperience = CalcTotalExp(level) + exp;
             }
+        }
+
+        private static int CalcTotalExp(int level)
+        {
+            if (level == 1) return 0;
+            else return (level - 1) * 100 + CalcTotalExp(level - 1);
         }
 
         struct DBData
