@@ -17,8 +17,18 @@ namespace carbonics
 			InitializeComponent ();
             Task[] tks = MainPage.page.user.fDisplayTasks();
             foreach(Task tk in tks) {
-                Stacker.Children.Add(new TaskBoxGUI(tk));
+                Stacker.Children.Add(new TaskCheckBox(tk));
             }
 		}
-	}
+
+        private void Confirmer_Clicked(object sender, EventArgs e)
+        {
+            foreach (TaskCheckBox box in Stacker.Children)
+            {
+                if (box.GetSelected())
+                    MainPage.page.user.selectTasks(box.GetTask());
+                Navigation.PopModalAsync();
+            }  
+        }
+    }
 }

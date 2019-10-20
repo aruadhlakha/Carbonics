@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="carbonics.TaskProposal">
     <ContentPage.Content>
-        <StackLayout>
-            <ScrollView HeightRequest="300">
-                <StackLayout x:Name="Stacker" />
-            </ScrollView>
-        </StackLayout>
+        <Grid BackgroundColor="SlateGray">
+            <StackLayout>
+                <ScrollView HeightRequest="350">
+                    <StackLayout x:Name="Stacker" />
+                </ScrollView>
+                <Button Text="Confirm tomorrow's tasks!" x:Name="Confirmer" Clicked="Confirmer_Clicked" HeightRequest="50" />
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
