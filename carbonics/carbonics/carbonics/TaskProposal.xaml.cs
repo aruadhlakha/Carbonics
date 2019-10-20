@@ -58,17 +58,17 @@ namespace carbonics
 
         class UserData 
         {
-            public string username;
-            public int exp;
-            public int level;
-            public int totalExperience;
+            public string Username;
+            public int Experience;
+            public int Level;
+            public int TotalExperience;
             
             public UserData(string username, int exp, int level)
             {
-                this.username = username;
-                this.exp = exp;
-                this.level = level;
-                totalExperience = (level - 1) * 100 + exp;
+                this.Username = username;
+                this.Experience = exp;
+                this.Level = level;
+                TotalExperience = (level - 1) * 100 + exp;
             }
         }
 

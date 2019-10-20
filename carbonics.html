@@ -1,0 +1,76 @@
+<html>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    </style>
+    <body>
+    <p id="testt"></p>
+    <table id="leaderboard">
+    </table>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDnVWGToFi0eJk3AeRnULIYbblUbKa5GMs",
+    authDomain: "xamarinapp-256505.firebaseapp.com",
+    databaseURL: "https://xamarinapp-256505.firebaseio.com",
+    projectId: "xamarinapp-256505",
+    storageBucket: "xamarinapp-256505.appspot.com",
+    messagingSenderId: "769016896668",
+    appId: "1:769016896668:web:f14b1cf54264d6f2cba159",
+    measurementId: "G-NLTCTS9240"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script>
+function snapshotToArray(snapshot) {
+    var returnArr = [];
+
+    snapshot.forEach(function(childSnapshot) {
+        var item = childSnapshot.val();
+//        item.key = childSnapshot.key;
+
+        returnArr.push(item);
+    });
+
+    return returnArr;
+};
+function generateTableHead(table, data) {
+  let thead = table.createTHead();
+  let row = thead.insertRow();
+  for (let key of data) {
+    let th = document.createElement("th");
+    let text = document.createTextNode(key);
+    th.appendChild(text);
+    row.appendChild(th);
+  }
+}
+function generateTable(table, data) {
+  for (let element of data) {
+    let row = table.insertRow();
+    for (key in element) {
+      let cell = row.insertCell();
+      let text = document.createTextNode(element[key]);
+      cell.appendChild(text);
+    }
+  }
+}
+firebase.database().ref('MyTestData').on('value', function(snapshot) {
+let table = document.querySelector("table");
+let data = Object.keys(snapshotToArray(snapshot)[0]);
+generateTableHead(table, data);
+generateTable(table, snapshotToArray(snapshot));
+});
+</script>
+</body>
+</html>
