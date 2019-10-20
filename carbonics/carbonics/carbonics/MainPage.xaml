@@ -19,6 +19,7 @@
                     <Grid>
                         <BoxView BackgroundColor="DarkSlateGray" VerticalOptions="Center" HorizontalOptions="Start" HeightRequest="10" WidthRequest="200" />
                         <local:LevelBox x:Name="lBox"/>
+                        <Label x:Name="expfrac" TextColor ="White" FontSize="8" Text="Test" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HeightRequest="10" WidthRequest="200"/>
                     </Grid>
                 </StackLayout>
             </StackLayout>

@@ -1,28 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace carbonics
 {
     public class User
-    {   
+    {
+        private int timeTillRefresh = 0;
         private int level = 0;
         private int numTaskspDay=0;
         private int TasksCompleted = 0;
         private int XPcount = 0;
         private String name;
         //list of tasks per day
-        private Task[] tasksInProgress;
+        private List<Task> tasksInProgress = new List<Task>();
+
         //list of 20 tasks 
         Task[] taskList;
         Random rand = new Random();
 
-        public User(int level, int xp, int numTaskspDay, string name)
+        public User(int level, int xp, int numTaskspDay, string name, int timeTillRefresh)
         {
+            this.timeTillRefresh = timeTillRefresh;
             this.level = level;
             XPcount = xp;
             this.numTaskspDay = numTaskspDay;
-            tasksInProgress = new Task[numTaskspDay];
+            tasksInProgress = new List<Task>();
+            int count = 0;
+            while(Application.Current.Properties.ContainsKey("taskd" + count))
+            {
+                string desc = (string)Application.Current.Properties["taskd" + count];
+                int exp = (int)Application.Current.Properties["taskc" + count];
+                var t = new Task(desc, exp);
+                tasksInProgress.Add(t);
+                count++;
+            }
             this.name = name;
             taskList = taskAssignment();
         }
@@ -51,7 +64,7 @@ namespace carbonics
         //swipe right changes the status of the task and
         //changes the XPcount
         //along with increasing the TasksCompleted
-        public Task[] swipeRight(int num)
+        public List<Task> swipeRight(int num)
         {
             tasksInProgress[num].SwipeRight();
             XPcount += tasksInProgress[num].xp();
@@ -89,7 +102,7 @@ namespace carbonics
         //swipes left denoting whether the task had been completed
         //or not and then accordingly increases the XP and the 
         //tasksCompleted count
-        public Task[] swipeLeft(int num)
+        public List<Task> swipeLeft(int num)
         {
             tasksInProgress[num].SwipeLeft();
             XPcount += (int)Math.Round(0.25 * tasksInProgress[num].xp());
@@ -107,16 +120,9 @@ namespace carbonics
         }
 
         //selects the tasks for the day 
-        public Task[] selectTasks(Task selectTask)
+        public List<Task> selectTasks(Task selectTask)
         {
-            for (int i = 0; i < numTaskspDay; i++)
-            {
-                if (tasksInProgress[i] == null)
-                {
-                    tasksInProgress[i] = selectTask;
-                    break;
-                }
-            }
+            tasksInProgress.Add(selectTask);
             return tasksInProgress;
         }
             //returns the FIRST list of tasks so that it can 
@@ -144,40 +150,25 @@ namespace carbonics
         }
 
         //tasks showed on the user screen
-        public Task[] displayTasks()
+        public List<Task> displayTasks()
         {
-            Task[] toReturn;
-            int countF= 0;
-            for (int i = 0; i < numTaskspDay; i++)
-            {
-                if (tasksInProgress[i].checkComp() == false)
-                {
-                    countF++;
-                }
-            }
-            toReturn = new Task[countF];
-            int j = 0;
-            for (int i = 0; i < numTaskspDay; i++)
-            {
-                if (tasksInProgress[i].checkComp() == false)
-                {
-                    toReturn[j] = tasksInProgress[i];
-                    j++;
-                }
-            }
-            return toReturn;
+            return tasksInProgress;
         }
         //at the end of the day, this automatically turns all
         //the XP values to 0 giving no addition to user values
-        public Task[] setAllToTrue()
+        public List<Task> setAllToTrue()
         {
-            for (int i = 0; i < tasksInProgress.Length; i++)
+            for (int i = 0; i < tasksInProgress.Count; i++)
             {
                 tasksInProgress[i].SwipeLeft();
             }
             return tasksInProgress;
         }
 
+        public void RemoveTask(Task task)
+        {
+            if (tasksInProgress.Contains(task)) tasksInProgress.Remove(task);
+        }
             //defines a list of initial 20 tasks
             //10 remaining to be added
             private Task[] taskAssignment()

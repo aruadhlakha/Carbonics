@@ -21,7 +21,18 @@ namespace carbonics
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            int count = 0;
+            for(int i = 0; i < 50; i++)
+            {
+                Application.Current.Properties.Remove("taskd" + i);
+                Application.Current.Properties.Remove("taskc" + i);
+            }
+            foreach (Task t in ((MainPage)MainPage).user.displayTasks())
+            {
+                Application.Current.Properties["taskd" + count] = t.GetDesc();
+                Application.Current.Properties["taskc" + count] = t.xp();
+                count++;
+            }
         }
 
         protected override void OnResume()
