@@ -22,6 +22,10 @@ namespace carbonics
             page = this;
             InitializeComponent();
             taskStack = TaskStack;
+            if(!Application.Current.Properties.ContainsKey("username"))
+            {
+                Navigation.PushModalAsync(new CreateUsername());
+            }
             if(Application.Current.Properties.ContainsKey("time")) 
                 timeLeft = (int)Application.Current.Properties["time"];
             if (Application.Current.Properties.ContainsKey("level")) 

@@ -10,10 +10,7 @@ namespace carbonics
         public App()
         {
             InitializeComponent();
-            if (!Application.Current.Properties.ContainsKey("username"))
-                MainPage = new CreateUsername();
-            else
-                MainPage = new MainPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

@@ -24,7 +24,7 @@ namespace carbonics
             Application.Current.Properties["privacy"] = privacy;
             Application.Current.Properties["username"] = userent.Text;
             MainPage page = new MainPage();
-            Navigation.PushModalAsync(page);
+            Navigation.PopModalAsync();
         }
 
         private void Option_Clicked(object sender, EventArgs e)
