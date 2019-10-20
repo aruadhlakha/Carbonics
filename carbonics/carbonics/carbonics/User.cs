@@ -47,6 +47,7 @@ namespace carbonics
             }
             this.name = name;
             taskList = taskAssignment();
+            System.Diagnostics.Debug.WriteLine(tomorrowTasks.Count);
         }
         //returns the level number and calculates 
         //the level check based on the current XP

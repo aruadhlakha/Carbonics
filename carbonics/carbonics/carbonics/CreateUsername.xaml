@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="carbonics.CreateUsername">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Label Text="Carbonics"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   FontSize="20"/>
+            <Label Text="You're new! Set your username. " HorizontalOptions="Center"/>
+            <Entry x:Name="userent" HorizontalTextAlignment="Center"/>
+            <Label Text="(Don't use your real name)" HorizontalOptions="Center" FontSize="7"/>
+            <Button Text="Start sustaining!" x:Name="SetUser" VerticalOptions="End" Clicked="SetUser_Clicked" HeightRequest="50" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

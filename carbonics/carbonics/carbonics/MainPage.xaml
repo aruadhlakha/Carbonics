@@ -5,7 +5,8 @@
              x:Class="carbonics.MainPage">
     <Grid BackgroundColor="SlateGray">
         <StackLayout>
-            <ScrollView HeightRequest="300">
+            <Label x:Name="timeTill" FontSize ="12" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <ScrollView HeightRequest="280">
                 <StackLayout x:Name="TaskStack">
                 </StackLayout>
             </ScrollView>

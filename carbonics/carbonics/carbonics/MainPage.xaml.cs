@@ -51,11 +51,13 @@ namespace carbonics
         {
             UpdateLvView();
             var taskLs = user.displayTasks();
+            taskStack.Children.Clear();
             foreach (Task tk in taskLs)
             {
                 if (tk != null)
                     taskStack.Children.Add(new TaskBoxGUI(tk));
             }
+            timeTill.Text = timeLeft / 3600 + " hours, " + timeLeft / 60 + " minutes and " + timeLeft + " seconds till reset";
         }
 
         private void UpdateLvView()

@@ -23,11 +23,14 @@ namespace carbonics
 
         private void Confirmer_Clicked(object sender, EventArgs e)
         {
+            User user = MainPage.page.user;
+            System.Diagnostics.Debug.WriteLine("before " + user.GetTomorrowTasks().Count);
             foreach (TaskCheckBox box in Stacker.Children)
             {
                 if (box.GetSelected())
-                    MainPage.page.user.selectTasks(box.GetTask());
+                    user.selectTasks(box.GetTask());
             }
+            System.Diagnostics.Debug.WriteLine("after " + user.GetTomorrowTasks().Count);
             MainPage.page.UpdateTime();
             Navigation.PopModalAsync();
             MainPage.page.RefreshScreen();

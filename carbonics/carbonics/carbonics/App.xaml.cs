@@ -10,8 +10,10 @@ namespace carbonics
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            if (!Application.Current.Properties.ContainsKey("username"))
+                MainPage = new CreateUsername();
+            else
+                MainPage = new MainPage();
         }
 
         protected override void OnStart()
@@ -27,23 +29,26 @@ namespace carbonics
                 Application.Current.Properties.Remove("taskd" + i);
                 Application.Current.Properties.Remove("taskc" + i);
             }
-            foreach (Task t in ((MainPage)MainPage).user.displayTasks())
+            if(MainPage is MainPage)
             {
-                Application.Current.Properties["taskd" + count] = t.GetDesc();
-                Application.Current.Properties["taskc" + count] = t.xp();
-                count++;
-            }
-            count = 0;
-            for (int i = 0; i < 50; i++)
-            {
-                Application.Current.Properties.Remove("tommorowtaskd" + i);
-                Application.Current.Properties.Remove("tommorowtaskc" + i);
-            }
-            foreach (Task t in ((MainPage)MainPage).user.GetTomorrowTasks())
-            {
-                Application.Current.Properties["tommorowtaskd" + count] = t.GetDesc();
-                Application.Current.Properties["tommorowtaskc" + count] = t.xp();
-                count++;
+                foreach (Task t in ((MainPage)MainPage).user.displayTasks())
+                {
+                    Application.Current.Properties["taskd" + count] = t.GetDesc();
+                    Application.Current.Properties["taskc" + count] = t.xp();
+                    count++;
+                }
+                count = 0;
+                for (int i = 0; i < 50; i++)
+                {
+                    Application.Current.Properties.Remove("tommorowtaskd" + i);
+                    Application.Current.Properties.Remove("tommorowtaskc" + i);
+                }
+                foreach (Task t in ((MainPage)MainPage).user.GetTomorrowTasks())
+                {
+                    Application.Current.Properties["tommorowtaskd" + count] = t.GetDesc();
+                    Application.Current.Properties["tommorowtaskc" + count] = t.xp();
+                    count++;
+                }
             }
         }
 
