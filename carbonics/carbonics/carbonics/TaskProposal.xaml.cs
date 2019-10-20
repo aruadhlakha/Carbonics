@@ -11,24 +11,24 @@ using Xamarin.Forms.Xaml;
 
 namespace carbonics
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TaskProposal : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class TaskProposal : ContentPage
+    {
         public static bool opened;
-		public TaskProposal ()
-		{
+        public TaskProposal()
+        {
             opened = true;
-			InitializeComponent ();
+            InitializeComponent();
             Task[] tks = MainPage.page.user.fDisplayTasks();
-            foreach(Task tk in tks) {
+            foreach (Task tk in tks) {
                 Stacker.Children.Add(new TaskCheckBox(tk));
             }
-		}
+        }
 
         private void Confirmer_Clicked(object sender, EventArgs e)
         {
             var props = Application.Current.Properties;
-            if(props.ContainsKey("username") && props.ContainsKey("exp") && props.ContainsKey("level"))
+            if (props.ContainsKey("username") && props.ContainsKey("exp") && props.ContainsKey("level"))
             {
                 IFirebaseConfig config = new FirebaseConfig
                 {
@@ -38,9 +38,8 @@ namespace carbonics
                 IFirebaseClient client;
 
                 client = new FireSharp.FirebaseClient(config);
-                DBData data = new DBData((string)props["username"], 
-                    (int)props["exp"], (int)props["level"]);
-                client.Push("/MyTestData", new Tuple<string, int, int, int>(data.username, data.xp, data.level, (data.level-1) * 100 + data.xp));
+                //client.Push("/MyTestData", new Tuple<string, int, int, int>(data.username, data.xp, data.level, (data.level-1) * 100 + data.xp));
+                client.Push("/MyTestData", new UserData((string)props["username"], (int)props["exp"], (int)props["level"]));
             }
 
             User user = MainPage.page.user;
@@ -55,6 +54,22 @@ namespace carbonics
             opened = false;
             Navigation.PopModalAsync();
             MainPage.page.RefreshScreen();
+        }
+
+        class UserData 
+        {
+            public string username;
+            public int exp;
+            public int level;
+            public int totalExperience;
+            
+            public UserData(string username, int exp, int level)
+            {
+                this.username = username;
+                this.exp = exp;
+                this.level = level;
+                totalExperience = (level - 1) * 100 + exp;
+            }
         }
 
         struct DBData
