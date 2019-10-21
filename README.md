@@ -1,2 +1,2 @@
 # Carbonics
-MadHacs 2019 Sustainable project Entry
+MadHacks 2019 Sustainable project entry
